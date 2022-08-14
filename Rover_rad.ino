@@ -1,12 +1,12 @@
 #include <rover_Rad.h>
 #include <Servo.h>
-//rechts vorne
+//right forward
 Rad rad_1(100, 150);
-//links vorne
+//left forward
 Rad rad_2(-100, 150);
-//links unten
+//left backward
 Rad rad_3(-100, -150);
-//rechts unten
+//right backward
 Rad rad_4(100, -150);
 
 int rad_nummer;
@@ -14,34 +14,34 @@ float neut_pos = 92.5;
 
 Rad my_rads [] = {rad_1, rad_2, rad_3, rad_4};
 
-//virtuell oder referenz rad, vorne in der Mitte
+//virtual wheel forward in the middle - use it to calculate angels for the real wheels
 Rad virt_Rad(0, 150);
 
-// winkel für den Rover
+// angle for the ROVER
 float winkel;
 float winkel_geschw = 10;
 
-//x des Drehzentrums
+//x of turning centre
 float x_Dreh;
-//y des drehzentrums - ist konstant
+//y of turning centre - constant 
 float y_Dreh = 0;
 
-//winkel des rads rechts vorne
+//angle right forward wheel
 float winkel_r1;
-//winkel des rads links vorne
+//angle left forward wheel
 float winkel_r2;
-//winkel des rads links unten
+//angle left  backward wheel
 float winkel_r3;
-//winkel des rads rechts unten
+//angle right backward wheel
 float winkel_r4;
 
-//lineare geschwindigkeit des rads rechts vorne
+//linear velocities of the wheels
 float r_v_1;
-//lineare geschwindigkeit des rads links vorne
+
 float r_v_2;
-//lineare geschwindigkeit des rads links unten
+
 float r_v_3;
-//lineare geschwindigkeit des rads rechts unten
+
 float r_v_4;
 
 float rad_radius;
@@ -53,19 +53,19 @@ float rad_velocities [] = {r_v_1, r_v_2, r_v_3, r_v_4};
 float my_Rad_wink;
 float my_Rad_wink_mit_korrektur;
 
-//drehradius für jeden rad
+//radius of rotation of the wheels
 float radius_r1;
 float radius_r2;
 float radius_r3;
 float radius_r4;
 
-//rechts vorne
+//servo motors for the active wheels
 Servo ser1;
-//links vorne
+
 Servo ser2;
-//links unten
+
 Servo ser3;
-//rechts unten
+
 Servo ser4;
 
 Servo servos[] = {ser1, ser2, ser3, ser4};
